@@ -23,5 +23,8 @@ smart-open>=7.0.0
 # HTTP ingestion helper
 requests>=2.31.0
 
+# Environment variable loading
+python-dotenv>=1.0.0
+
 # pre-commit
 pre-commit
