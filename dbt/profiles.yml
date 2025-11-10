@@ -1,0 +1,19 @@
+fin_forge:
+  target: dev
+  outputs:
+    dev:
+      type: clickhouse
+      schema: "{{ env_var('CLICKHOUSE_SCHEMA', 'analytics') }}"
+      host: "{{ env_var('CLICKHOUSE_HOST', 'localhost') }}"
+      port: "{{ env_var('CLICKHOUSE_PORT', '9440') | int }}"
+      user: "{{ env_var('CLICKHOUSE_USER', 'default') }}"
+      password: "{{ env_var('CLICKHOUSE_PASSWORD', '') }}"
+      database: "{{ env_var('CLICKHOUSE_DATABASE', 'analytics') }}"
+      cluster: "{{ env_var('CLICKHOUSE_CLUSTER', '') }}"
+      secure: "{{ env_var('CLICKHOUSE_SECURE', 'true') | lower == 'true' }}"
+      verify: "{{ env_var('CLICKHOUSE_VERIFY', 'false') | lower == 'true' }}"
+      compression: "{{ env_var('CLICKHOUSE_COMPRESSION', 'lz4') }}"
+      timeout: "{{ env_var('CLICKHOUSE_TIMEOUT', '30') | int }}"
+      secure_socket_timeout: "{{ env_var('CLICKHOUSE_SECURE_SOCKET_TIMEOUT', '30') | int }}"
+      async_execution: "{{ env_var('CLICKHOUSE_ASYNC', 'false') | lower == 'true' }}"
+      threads: "{{ env_var('DBT_THREADS', '4') | int }}"

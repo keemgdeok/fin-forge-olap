@@ -44,9 +44,6 @@ class Settings:
     """Collection of strongly-typed configuration values."""
 
     airflow_home: Path = field(default_factory=_partial_env(_env_path, "AIRFLOW_HOME", ".airflow"))
-    sqs_queue_url: str = field(
-        default_factory=_partial_env(_env_str, "AIRFLOW_VAR_SQS_QUEUE_URL", "local-sqs-queue")
-    )
     clickhouse_host: str = field(
         default_factory=_partial_env(_env_str, "CLICKHOUSE_HOST", "localhost")
     )

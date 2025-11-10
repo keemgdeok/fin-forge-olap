@@ -26,5 +26,8 @@ requests>=2.31.0
 # Environment variable loading
 python-dotenv>=1.0.0
 
+# pytest
+pytest
+
 # pre-commit
 pre-commit

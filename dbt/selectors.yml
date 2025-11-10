@@ -1,0 +1,12 @@
+selectors:
+  - name: by_domain
+    definition:
+      union:
+        - method: tag
+          value: "{{ var('domain', 'market') }}"
+        - method: tag
+          value: "{{ var('layer', 'adjusted') }}"
+  - name: incremental_only
+    definition:
+      method: config.materialized
+      value: incremental
