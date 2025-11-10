@@ -58,7 +58,7 @@ jobs:
         run: pytest
 
       - name: Initialize Airflow metadata
-        run: airflow db init
+        run: airflow db migrate
 
       - name: Airflow DAG test
         run: airflow dags test sqs_curated_cosmos 2024-01-01
