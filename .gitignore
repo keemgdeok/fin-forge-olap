@@ -9,6 +9,7 @@ venv/
 .env
 .envrc
 .env.*
+!.env.example
 
 # Packaging artifacts
 build/
