@@ -1,0 +1,66 @@
+# Bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+.env
+.envrc
+.env.*
+
+# Packaging artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+pip-log.txt
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Tests and coverage
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.pytest_cache/
+htmlcov/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+*.out
+*.err
+
+# IDE / editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/run_results.json
+dbt/manifest.json
+
+# Airflow
+airflow/logs/
+airflow/airflow.db
+airflow/airflow-webserver.pid
+airflow/unittests.cfg
+
+# Grafana
+grafana/data/
+grafana/plugins/
+
+# OS files
+.DS_Store
+Thumbs.db

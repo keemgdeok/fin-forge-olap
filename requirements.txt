@@ -1,0 +1,9 @@
+# Airflow core (respect official constraints when installing)
+apache-airflow<=3.0.0
+
+# Astronomer Cosmos for Airflow-dbt integration
+astronomer-cosmos>=1.0.0
+
+# dbt core plus warehouse adapter (replace adapter if needed)
+dbt-core>=1.7.0
+dbt-clickhouse>=1.7.0
