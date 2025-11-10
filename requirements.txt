@@ -7,3 +7,21 @@ astronomer-cosmos>=1.0.0
 # dbt core plus warehouse adapter (replace adapter if needed)
 dbt-core>=1.7.0
 dbt-clickhouse>=1.7.0
+
+# AWS/S3/SQS interaction
+boto3>=1.34.0
+
+# Data validation and serialization
+pydantic>=2.7.0
+
+# ClickHouse ingestion helpers
+clickhouse-driver>=0.2.7
+
+# Streaming file reads from S3
+smart-open>=7.0.0
+
+# HTTP ingestion helper
+requests>=2.31.0
+
+# pre-commit
+pre-commit

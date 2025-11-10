@@ -1,0 +1,65 @@
+[project]
+name = "fin-forge-olap"
+version = "0.1.0"
+description = "Local OLAP orchestration stack powered by Airflow, dbt, Cosmos, and ClickHouse."
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = [
+  ".venv",
+  "dbt/target",
+  "dbt/dbt_packages",
+  "airflow/logs",
+  "__pycache__",
+]
+
+[tool.ruff.lint]
+select = [
+  "A",   # builtins
+  "B",   # flake8-bugbear
+  "C4",  # flake8-comprehensions
+  "DTZ", # timezone aware datetimes
+  "E",
+  "F",
+  "I",   # import sorting
+  "PIE",
+  "PL",
+  "Q",
+  "RUF",
+  "S",   # security
+  "SIM",
+  "TID",
+  "UP",
+  "W",
+]
+ignore = [
+  "S101", # assert statements allowed in tests/utilities
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+
+[tool.mypy]
+python_version = "3.12"
+pretty = true
+strict = true
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+exclude = "(?x)(\\.venv|dbt/target|dbt/dbt_packages|airflow/logs)"
+
+[tool.bandit]
+skips = []
+exclude_dirs = [
+  ".venv",
+  "dbt/target",
+  "dbt/dbt_packages",
+  "airflow/logs",
+]
