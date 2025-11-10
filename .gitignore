@@ -9,6 +9,7 @@ venv/
 .env
 .envrc
 .env.*
+!.env.example
 
 # Packaging artifacts
 build/
@@ -64,3 +65,5 @@ grafana/plugins/
 # OS files
 .DS_Store
 Thumbs.db
+AGENTS.md
+*.md
