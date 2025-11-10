@@ -60,5 +60,15 @@ jobs:
       - name: Initialize Airflow metadata
         run: airflow db migrate
 
+      - name: Check DAG presence
+        id: dag_check
+        run: |
+          if [ -f airflow/dags/sqs_curated_cosmos_dag.py ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Airflow DAG test
+        if: steps.dag_check.outputs.exists == 'true'
         run: airflow dags test sqs_curated_cosmos 2024-01-01

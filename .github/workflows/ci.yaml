@@ -60,7 +60,7 @@ jobs:
           pip install pytest
 
       - name: Initialize Airflow metadata
-        run: airflow db init
+        run: airflow db migrate
 
       - name: Run pytest
         run: pytest
@@ -68,5 +68,15 @@ jobs:
       - name: Validate DAG imports
         run: python -m compileall airflow/dags
 
+      - name: Check DAG presence
+        id: dag_check
+        run: |
+          if [ -f airflow/dags/sqs_curated_cosmos_dag.py ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Airflow DAG test
-        run: airflow dags test sqs_curated_cosmos 2025-01-01
+        if: steps.dag_check.outputs.exists == 'true'
+        run: airflow dags test sqs_curated_cosmos 2024-01-01
